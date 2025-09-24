@@ -1,0 +1,62 @@
+Model Used: YOLOv8
+1. Overview
+
+YOLO stands for You Only Look Once.
+
+It’s a real-time object detection model that predicts bounding boxes and class probabilities in a single pass over an image.
+
+YOLOv8 is the latest version from Ultralytics, which improves accuracy, speed, and ease of use compared to previous YOLO versions.
+
+2. Why YOLOv8 for Pothole Detection
+
+Real-time performance: Can run on a Raspberry Pi with moderate FPS.
+
+High accuracy: Detects small objects like potholes reliably.
+
+Easy training: Supports custom datasets and transfer learning with .pt models.
+
+Integration: Works smoothly with OpenCV for live video annotation.
+
+3. Custom Model
+
+Your project uses a custom-trained YOLOv8 model (pothole_new.pt) trained on images of roads with potholes.
+
+The training process involves:
+
+Collecting images of roads with and without potholes.
+
+Annotating potholes using bounding boxes.
+
+Training YOLOv8 on the annotated dataset.
+
+Exporting the trained weights to a .pt file.
+
+Input: Image frames from the Zebronics camera.
+
+Output:
+
+Bounding boxes around detected potholes
+
+Confidence score for each detection
+
+Class label (pothole in this case)
+
+4. How the Model Works in Your Code
+
+Frame Capture: Grab frames from Raspberry Pi camera using OpenCV.
+
+Inference: Pass each frame to YOLO(model_path).
+
+Detection: The model predicts bounding boxes, confidence scores, and class labels.
+
+Visualization: Use results[0].plot() or cv2.putText to overlay detections on the frame.
+
+5. Benefits of Using YOLOv8
+
+Single-stage detector → fast
+
+Supports custom classes → perfect for potholes
+
+Works with live video streams → suitable for real-time monitoring
+
+Lightweight enough to run on Raspberry Pi 4 with optimizations
