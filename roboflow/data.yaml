@@ -1,0 +1,12 @@
+names:
+- Potholes
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: pothole-detection-yolov8
+  url: https://universe.roboflow.com/gerapothole/pothole-detection-yolov8/dataset/1
+  version: 1
+  workspace: gerapothole
+test: /content/Pothole-detection-YOLOv8-1/test
+train: /content/Pothole-detection-YOLOv8-1/train
+val: /content/Pothole-detection-YOLOv8-1/valid
